@@ -12,13 +12,13 @@ const personalMoviesDB = {
 };
 
     for (let i=0; i < 2; i++) {
-        if (a&&b == "", a.length > 5, a&&b == false) {
             const  a = prompt("The last movie you watched?"),
             b = +prompt("What's your rate for this?");
- 
+
+            if (a != "" && b != "" && a.length < 5 && a != null && b != null) {
             personalMoviesDB.movies[a] = b;
         }else{
-            continue;
+            i--;  
         }
         
     }
