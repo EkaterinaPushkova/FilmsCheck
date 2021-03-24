@@ -1,7 +1,9 @@
 // "use strict";
 
-let numberOfFilms = +prompt('How many films have you watched?', [19]);
-document.write('the number of movies you watched - ', numberOfFilms);
+let numberOfFilms = +prompt('How many films have you watched?', [11]);
+// document.write('the number of movies you watched - ', numberOfFilms);
+// alert('the number of movies you watched - ', numberOfFilms);
+alert(`the number of movies you watched - ${numberOfFilms}`);
 
 const personalMoviesDB = {
     count: numberOfFilms,
@@ -20,9 +22,21 @@ const personalMoviesDB = {
         }else{
             i--;  
         }
-        
     }
 
-
-
 console.log(personalMoviesDB); 
+
+switch ( personalMoviesDB.count){
+    case 2: 
+    //  document.write("You are is a normally viewer");
+        alert("You are is a normally viewer");
+        break;
+    case 4:
+        alert("You are is a movie fan");
+        break;
+    case 8:
+        alert("You are is a CRAZY MEGA MOVIE HERO");
+        break;
+    default:
+       alert("error");
+}
