@@ -35,7 +35,7 @@ function rememberMyFilms(){
 
 console.log(personalMoviesDB.movies); 
 }
-rememberMyFilms();
+// rememberMyFilms();
 
 
 function getStatus(){
@@ -64,9 +64,16 @@ function showMyDB(){
 }
 showMyDB();
 
+//more beauty ex:
+// function showMyDB(hidden){
+//     if (!hidden){
+//         console.log(personalMoviesDB);
+//     }
+//  }
+
 function writeYourGenres(){
-    for(i = 0, i < 2, i++){
-       personalMoviesDB.genres[a] = prompt(`Your favorite genre at number${i}`, '')
+    for(i = 1; i <=3 ; i++){
+       personalMoviesDB.genres[i-1] = prompt(`Your favorite genre at number${i}`, '');
     }
 }
 console.log(personalMoviesDB.genres);
