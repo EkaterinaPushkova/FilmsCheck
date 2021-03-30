@@ -33,7 +33,7 @@ function rememberMyFilms(){
         }
     }
 
-console.log(personalMoviesDB); 
+console.log(personalMoviesDB.movies); 
 }
 rememberMyFilms();
 
@@ -57,12 +57,19 @@ function getStatus(){
 }
 getStatus();
 
-function checkPrivat(){
+function showMyDB(){
    if (personalMoviesDB.privat == false){
        console.log(personalMoviesDB);
    }
 }
-checkPrivat();
+showMyDB();
+
+function writeYourGenres(){
+    for(i = 0, i < 2, i++){
+       personalMoviesDB.genres[a] = prompt(`Your favorite genre at number${i}`, '')
+    }
+}
+console.log(personalMoviesDB.genres);
 
 // if (personalMovieDB.count < 10) {
 //     console.log("Просмотрено довольно мало фильмов");
