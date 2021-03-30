@@ -57,6 +57,13 @@ function getStatus(){
 }
 getStatus();
 
+function checkPrivat(){
+   if (personalMoviesDB.privat == false){
+       console.log(personalMoviesDB);
+   }
+}
+checkPrivat();
+
 // if (personalMovieDB.count < 10) {
 //     console.log("Просмотрено довольно мало фильмов");
 // } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
