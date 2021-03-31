@@ -51,9 +51,19 @@ const personalMoviesDB = {
         for(i = 1; i <=3 ; i++){
            personalMoviesDB.genres[i-1] = prompt(`Your favorite genre at number${i}`, '');
         }
+    },
+    toggleVisibleMyDB: function(){
+        console.log(`visible your DB is ${this.privat}`);
+        if (this.privat === true){
+            privat = false;
+        }else{
+            privat = true;
+        }
+        console.log(`now visible your DB is ${this.privat}`);
     }
 
 };
+personalMoviesDB.toggleVisibleMyDB();
 
 
 // countFilms();
