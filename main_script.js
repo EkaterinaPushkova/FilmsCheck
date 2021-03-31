@@ -49,7 +49,12 @@ const personalMoviesDB = {
      },
      writeYourGenres: function (){
         for(i = 1; i <=3 ; i++){
-           personalMoviesDB.genres[i-1] = prompt(`Your favorite genre at number${i}`, '');
+           personalMoviesDB.genres[i-1] = prompt(`Your favorite genre at number ${i}`, '');
+           if (this.genres[i-1] == null || this.genres[i-1] == "") {
+               i--;
+           }else{
+                i = i;
+           }
         }
     },
     toggleVisibleMyDB: function(){
@@ -60,10 +65,19 @@ const personalMoviesDB = {
             privat = true;
         }
         console.log(`now visible your DB is ${this.privat}`);
-    }
+    },
+    showMyGenres: function(){
+        this.genres.forEach(function(genre, num){
+            console.log(`genre #${num+1} is ${genre}`)
+        });
+    } 
 
 };
-personalMoviesDB.toggleVisibleMyDB();
+
+personalMoviesDB.writeYourGenres();
+personalMoviesDB.showMyGenres();
+
+// personalMoviesDB.toggleVisibleMyDB();
 
 
 // countFilms();
