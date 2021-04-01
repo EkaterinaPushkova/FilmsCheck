@@ -1,17 +1,15 @@
 // "use strict";
 
-let numberOfFilms;
-
 const personalMoviesDB = {
-    count: numberOfFilms,
+    count: 0,
     movies: {},
     actors: {},
     genres: [],
     privat: false,
     countFilms: function (){
-        numberOfFilms = +prompt('How many films have you watched?', [11]);
-    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
-        numberOfFilms = +prompt('How many films have you watched?', [11]);
+        this.count = +prompt('How many films have you watched?', [11]);
+    while (this.count == '' || this.count == null || isNaN(this.count)){
+        this.count = +prompt('How many films have you watched?', [11]);
         }
     },
     rememberMyFilms: function (){
@@ -20,14 +18,14 @@ const personalMoviesDB = {
                 b = +prompt("What's your rate for this?");
     
                 if (a != "" || b != "" && a.length < 5 && a != null && b != null) {
-                personalMoviesDB.movies[a] = b;
+                this.movies[a] = b;
             }else{
                 i--;  
             }
         }
     },
     getStatus: function (){
-        switch (personalMoviesDB.count){
+        switch (this.count){
             case 2: 
             //  document.write("You are is a normally viewer");
                 alert("You are is a normally viewer");
@@ -43,19 +41,25 @@ const personalMoviesDB = {
         }
     },
     showMyDB: function(){
-        if (personalMoviesDB.privat == false){
+        if (this.privat == false){
             console.log(personalMoviesDB);
         }
      },
-     writeYourGenres: function (){
-        for(i = 1; i <=3 ; i++){
-           personalMoviesDB.genres[i-1] = prompt(`Your favorite genre at number ${i}`, '');
-           if (this.genres[i-1] == null || this.genres[i-1] == "") {
-               i--;
-           }else{
-                i = i;
-           }
-        }
+     writeYourGenres: function(){
+         let genre = prompt(`Your favorite genres through a space`, '');
+            if (genre == null || genre == "") {
+                   i--;
+            }else{
+                this.genres = genre.split(' ');
+            }
+        // for(i = 1; i <=3 ; i++){
+        //    this.genres[i-1] = prompt(`Your favorite genre at number ${i}`, '');
+        //    if (this.genres[i-1] == null || this.genres[i-1] == "") {
+        //        i--;
+        //    }else{
+        //         i = i;
+        //    }
+        // }
     },
     toggleVisibleMyDB: function(){
         console.log(`visible your DB is ${this.privat}`);
@@ -68,7 +72,7 @@ const personalMoviesDB = {
     },
     showMyGenres: function(){
         this.genres.forEach(function(genre, num){
-            console.log(`genre #${num+1} is ${genre}`)
+            console.log(`genre #${num+1} is ${genre}`);
         });
     } 
 
@@ -85,8 +89,6 @@ personalMoviesDB.showMyGenres();
 // getStatus();
 
 // showMyDB();
-
-// console.log(typeof(numberOfFilms));
 
 // console.log(personalMoviesDB.movies);
 
